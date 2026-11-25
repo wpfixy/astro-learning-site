@@ -1,5 +1,11 @@
 ---
-import Navigation from "../components/Navigation.astro";
+import Header from '../components/Header.astro';
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skillColor = "red";
+const fontWeight = "200";
+const textCase = "uppercase";
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -7,10 +13,26 @@ import Navigation from "../components/Navigation.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>About Vikash</title>
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
   </head>
   <body>
-    <Navigation />
+    <Header />
     <h1>About Vikash</h1>
     <p>I am learning Astro and building my first website.</p>
+    <p>My skills are:</p>
+        <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+        <Footer />
   </body>
 </html>

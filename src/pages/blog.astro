@@ -1,5 +1,7 @@
 ---
-import Navigation from "../components/Navigation.astro";
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -9,7 +11,7 @@ import Navigation from "../components/Navigation.astro";
     <title>My Blog</title>
   </head>
   <body>
-    <Navigation />
+    <Header />
 
     <h1>My Astro Learning Blog</h1>
     <p>This is where I will share my Astro learning journey.</p>
@@ -24,5 +26,6 @@ import Navigation from "../components/Navigation.astro";
         <a href="/posts/post-3/">My Astro Deployment Journey</a>
         </li>
     </ul>
+    <Footer />
   </body>
 </html>

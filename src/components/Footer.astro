@@ -1,0 +1,23 @@
+---
+const platform = "github";
+const username = "wpfixy";
+import Social from './Social.astro';
+---
+
+<footer>
+      <p>Find me online:</p>
+
+  <Social platform="github" username="wpfixy" />
+  <Social platform="twitter" username="astrodotbuild" />
+  <Social platform="github" username="withastro" />
+  <Social platform="youtube" username="astrodotbuild" />
+
+
+  <p>
+    Learn more about my projects on <br>
+     <a href={`https://www.${platform}.com/${username}`}>
+      {platform}
+    </a>
+    !
+  </p>
+</footer>
