@@ -1,18 +1,13 @@
 ---
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const skillColor = "red";
 const fontWeight = "200";
 const textCase = "uppercase";
-import '../styles/global.css';
-import Footer from '../components/Footer.astro';
+const pageTitle = "About Page";
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>About Vikash</title>
+<BaseLayout pageTitle={pageTitle}>
+<h1>About Vikash</h1>
     <style define:vars={{skillColor, fontWeight, textCase}}>
   h1 {
     color: purple;
@@ -24,18 +19,11 @@ import Footer from '../components/Footer.astro';
     text-transform: var(--textCase);
   }
 </style>
-  </head>
-  <body>
-    <Header />
-    <h1>About Vikash</h1>
+
     <p>I am learning Astro and building my first website.</p>
     <p>My skills are:</p>
         <ul>
         {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
-        <Footer />
-  <script>
-  import "../scripts/menu.js";
-</script>
-</body>
-</html>
+        
+</BaseLayout>
